@@ -76,8 +76,8 @@
           <div class='search_ranking rounded-top text-center' style='color:white; width:70%;'>검색어 순위</div>
           <div class='d-flex flex-column align-items-center search_result rounded-bottom' style='width:70%'>
             {% for search_word in search_words %}
-              <div class='my-1'>{{forloop.counter}}.
-                {{search_word.word}}
+              <div class='my-1'>
+                {{forloop.counter}}.{{search_word.word}}
               </div>
             {% endfor %}
           </div>
@@ -107,7 +107,7 @@
                 </a>
               </span>
               <span class="bg-light ms-3">
-                <a class='text-decoration-none main_color2' href="{%url 'accounts:detail' post.user.pk%}">
+                <a class='text-decoration-none main_color2' href="{% url 'posts:detail' post.pk %}">
                   #
                   {{post.tag}}
                 </a>

@@ -26,11 +26,10 @@
   </head>
 
   <body>
+    {% include 'navbar.html' %}
 
-{% include 'navbar.html' %}
-
-      <!-- 본문 content block -->
-      {% block content %}{% endblock content %}
+    <!-- 본문 content block -->
+    {% block content %}{% endblock content %}
 
     </div>
 
