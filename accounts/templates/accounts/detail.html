@@ -437,18 +437,19 @@
       </div>
     </div>
   </div>
+  {% if user == request.user %}
+    <!-- 버튼 그룹 -->
+    <p class="text-center mt-4">
+      <a class="btn btn-outline-primary" href="{% url 'accounts:update' %}">수정</a>
+      <a class="btn btn-outline-success" href="{% url 'accounts:change_password' %}">비밀번호 변경</a>
+      <a class="btn login_btn" href="{% url 'articles:index' %}">홈으로 돌아가기</a>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        회원탈퇴
+      </button>
 
-  <!-- 버튼 그룹 -->
-  <p class="text-center mt-4">
-    <a class="btn btn-outline-primary" href="{% url 'accounts:update' %}">수정</a>
-    <a class="btn btn-outline-success" href="{% url 'accounts:change_password' %}">비밀번호 변경</a>
-    <a class="btn login_btn" href="{% url 'articles:index' %}">홈으로 돌아가기</a>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      회원탈퇴
-    </button>
-
-  </p>
+    </p>
+  {% endif %}
 </div>
 </div>
 </div>
