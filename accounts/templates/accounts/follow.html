@@ -39,45 +39,44 @@
                 </form>
               {% endif %}
             </div>
-          </div>
         {% endfor %}
       {% else %}
         <div class="text-muted text-center">
           앗!😐 팔로잉한 사용자가 없어요.
         </div>
       {% endif %}
-    </div>
+      </div>
 
-    <div class="tab-pane fade" id="follower" role="tabpanel" aria-labelledby="follower-tab">
-      {% if user.followers.count != 0 %}
-        {% for follower in followers %}
-          <div class="d-flex justify-content-between">
-            <div class="mb-3">
-              <a class="text-dark" href="{% url 'accounts:detail' follower.pk %}" style="text-decoration: none;">
-                {% if follower.profile %}
-                  <img class='rounded-circle' style='height:50px;width:50px;' src="{{ follower.profile.url }}" alt="{{ user.profile }}">
-                {% else %}
-                  <img class='rounded-circle' style='height:50px;width:50px;' src="{% static '/images/profile/user.png'%}" alt="user">
-                {% endif %}
-                <span class="fs-5">{{ follower.username }}</span>
-              </a>
+      <div class="tab-pane fade" id="follower" role="tabpanel" aria-labelledby="follower-tab">
+        {% if user.followers.count != 0 %}
+          {% for follower in followers %}
+            <div class="d-flex justify-content-between">
+              <div class="mb-3">
+                <a class="text-dark" href="{% url 'accounts:detail' follower.pk %}" style="text-decoration: none;">
+                  {% if follower.profile %}
+                    <img class='rounded-circle' style='height:50px;width:50px;' src="{{ follower.profile.url }}" alt="{{ user.profile }}">
+                  {% else %}
+                    <img class='rounded-circle' style='height:50px;width:50px;' src="{% static '/images/profile/user.png'%}" alt="user">
+                  {% endif %}
+                  <span class="fs-5">{{ follower.username }}</span>
+                </a>
+              </div>
+
+              {% if request.user == user %}
+                <form method='POST' action="{% url 'accounts:dfollow' follower.pk%}">
+                  {% csrf_token %}
+                  <input name='dfollower' type="submit" value="삭제" class='btn btn-sm signup_btn fw-bold'>
+                </form>
+              {% endif %}
             </div>
-
-            {% if request.user == user %}
-              <form method='POST' action="{% url 'accounts:dfollow' follower.pk%}">
-                {% csrf_token %}
-                <input name='dfollower' type="submit" value="삭제" class='btn btn-sm signup_btn fw-bold'>
-              </form>
-            {% endif %}
+          {% endfor %}
+        {% else %}
+          <div class="text-muted text-center">
+            앗!😐 팔로워한 사용자가 없어요.
           </div>
-        {% endfor %}
-      {% else %}
-        <div class="text-muted text-center">
-          앗!😐 팔로워한 사용자가 없어요.
-        </div>
-      {% endif %}
+        {% endif %}
+      </div>
     </div>
   </div>
-</div>
 
 {% endblock content %}
