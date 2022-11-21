@@ -197,7 +197,7 @@ def github_login(request):
         if request.user.is_authenticated:
             raise SocialLoginException("User already logged in")
         client_id = os.environ.get("GITHUB_ID")
-        redirect_uri = "http://kdt2ndpjt11tbean-env.eba-xpyvx2pg.ap-northeast-2.elasticbeanstalk.com/login/github/callback"
+        redirect_uri = "http://kdt2ndpjt11tbean-env.eba-xpyvx2pg.ap-northeast-2.elasticbeanstalk.com/accounts/login/github/callback"
         return redirect(
             f"https://github.com/login/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&scope=read:user"
         )  # 👈 사용자가 승인을 누르면, redirect_uri 경로로 redirect 됩니다.

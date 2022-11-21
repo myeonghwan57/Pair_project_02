@@ -9,7 +9,7 @@ from django.utils import timezone
 class JobData(models.Model):
     job_name = models.CharField(max_length=100)
     position = models.CharField(max_length=100)
-    pseudo_position = models.CharField(max_length=100)
+    pseudo_position = models.CharField(max_length=255)
     company_job = models.TextField()
     bookmark = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="bookmark")
 
