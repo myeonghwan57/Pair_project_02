@@ -35,8 +35,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: "kdt-2ndpjt-11team-bean"
-          environment_name: 'Kdt2ndpjt11teambean-env'
+          application_name: "kdt-2ndpjt-11t-bean"
+          environment_name: 'Kdt2ndpjt11tbean-env'
           version_label: "python-${{ steps.format-time.outputs.replaced }}"
           region: "ap-northeast-2"
           deployment_package: deploy.zip
