@@ -20,7 +20,6 @@
 ## 2. 팀원
 ![image](https://user-images.githubusercontent.com/108647466/203455959-b54cdcd9-1d56-4d76-9546-9995b4527cc7.png)
 강동현
-- 팀장
 - 백엔드
   - 정보수집(크롤링)
   - 구직 정보 페이지 기능 전반
@@ -28,6 +27,7 @@
 ![image](https://user-images.githubusercontent.com/108647466/203455909-7f6c46eb-a02e-4ed6-bf3c-e28869a9ffc5.png)
 
 김명환
+- 팀장
 - 프론트엔드
   - 커뮤니티, 로그인
 - search 기능 구현
